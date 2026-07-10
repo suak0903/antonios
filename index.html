@@ -17,12 +17,12 @@
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://suak0903.github.io/antonios/media/og.jpg">
-<meta name="theme-color" content="#1e1b17">
+<meta name="theme-color" content="#122a40">
 <link rel="icon" href="media/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="media/favicon-180.png">
 <link rel="preload" as="image" href="media/hero.webp" media="(min-width:701px)">
 <link rel="preload" as="image" href="media/hero-mob.webp" media="(max-width:700px)">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Restaurant","name":"Antonio","alternateName":"Antonios Espresso Bar","@id":"https://suak0903.github.io/antonios/","url":"https://suak0903.github.io/antonios/","image":"https://suak0903.github.io/antonios/media/og.jpg","telephone":"+49 2161 207766","priceRange":"10-20 €","servesCuisine":["Italienisch","Espresso-Bar","Weinstube"],"address":{"@type":"PostalAddress","streetAddress":"Friedrichstraße 11","postalCode":"41061","addressLocality":"Mönchengladbach","addressRegion":"NRW","addressCountry":"DE"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"11:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"19:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"194"},"paymentAccepted":"Cash","sameAs":["https://www.facebook.com/p/Antonios-Espresso-Bar-100046776345160/"]}
 </script>
@@ -117,13 +117,13 @@
           <p class="lead">Ein lebensfrohes Buongiorno zur Begrüßung, dann duftet es nach Espresso und frischer Pasta. Beim Antonio ist man kein zahlender Kunde, sondern zu Gast bei Freunden.</p>
           <p>Antonio kocht selbst, klassisch italienisch und immer frisch. Renzo und das Team sorgen dafür, dass kein Glas lange leer bleibt und kein Gast lange allein. Wer mag, lernt nebenbei noch Italienisch: Es steht auf der Serviette.</p>
           <p class="muted">Die Karte ist bewusst klein und steht auf der großen Tafel. Was drauf steht, wechselt. Dass es schmeckt, nicht.</p>
-          <div class="tags">
-            <span class="tag">Hausgemachte <em>Pasta</em></span>
-            <span class="tag"><em>Espresso</em>-Bar</span>
-            <span class="tag">Terrasse in der <em>City</em></span>
-            <span class="tag">Aperitivo &amp; <em>Vino</em></span>
-            <span class="tag">Hunde <em>willkommen</em></span>
-          </div>
+          <ul class="usps">
+            <li><span class="mark"></span><b>Hausgemachte Pasta</b><span>frisch gekocht, klassisch italienisch</span></li>
+            <li><span class="mark"></span><b>Espresso-Bar</b><span>der Kaffee, der dem Haus den Namen gibt</span></li>
+            <li><span class="mark"></span><b>Terrasse in der City</b><span>unter blauen Schirmen in der Friedrichstraße</span></li>
+            <li><span class="mark"></span><b>Aperitivo &amp; Vino</b><span>Aperol, Bellini, italienische Weine</span></li>
+            <li><span class="mark"></span><b>Hunde willkommen</b><span>und Gäste sowieso</span></li>
+          </ul>
         </div>
         <div class="split__media" style="background-image:url('media/gastgeber-blumen.webp')" role="img" aria-label="Blumen auf dem Tisch, im Hintergrund der Gastgeber"></div>
       </div>
@@ -364,8 +364,9 @@
   <button class="lb__nav prev" id="lbPrev" aria-label="Vorheriges Bild">&#8249;</button>
   <img id="lbImg" src="" alt="">
   <button class="lb__nav next" id="lbNext" aria-label="Nächstes Bild">&#8250;</button>
+  <div class="lb__count" id="lbCount"></div>
 </div>
 
-<script src="js/site.js?v=2" defer></script>
+<script src="js/site.js?v=3" defer></script>
 </body>
 </html>

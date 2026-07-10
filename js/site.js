@@ -112,12 +112,12 @@
   }
 
   /* Lightbox für die Galerie */
-  var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg');
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCount=document.getElementById('lbCount');
   var gpics=[].slice.call(document.querySelectorAll('.gallery picture'));
   if(lb && lbImg && gpics.length){
     var shots = gpics.map(function(p){ var im=p.querySelector('img'); return { src:(im.currentSrc||im.src), alt:im.alt }; });
     var cur=0;
-    function showLb(i){ cur=(i+shots.length)%shots.length; lbImg.src=shots[cur].src; lbImg.alt=shots[cur].alt; }
+    function showLb(i){ cur=(i+shots.length)%shots.length; lbImg.src=shots[cur].src; lbImg.alt=shots[cur].alt; if(lbCount) lbCount.textContent=(cur+1)+' / '+shots.length; }
     function openLb(i){ showLb(i); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
     gpics.forEach(function(p,i){ p.addEventListener('click', function(){ openLb(i); }); });
@@ -127,6 +127,14 @@
     lb.addEventListener('click', function(e){ if(e.target===lb) closeLb(); });
     document.addEventListener('keydown', function(e){ if(!lb.classList.contains('open')) return;
       if(e.key==='Escape') closeLb(); else if(e.key==='ArrowLeft') showLb(cur-1); else if(e.key==='ArrowRight') showLb(cur+1); });
+    /* Swipe: links/rechts blaettern (Schwelle 45px, horizontal dominant) */
+    var lsx=0, lsy=0, ltrack=false;
+    lb.addEventListener('touchstart', function(e){ lsx=e.touches[0].clientX; lsy=e.touches[0].clientY; ltrack=true; }, {passive:true});
+    lb.addEventListener('touchend', function(e){
+      if(!ltrack) return; ltrack=false;
+      var dx=e.changedTouches[0].clientX-lsx, dy=e.changedTouches[0].clientY-lsy;
+      if(Math.abs(dx)>45 && Math.abs(dx)>Math.abs(dy)){ showLb(dx<0?cur+1:cur-1); }
+    }, {passive:true});
   }
 
   /* Galerie-Masonry: LPT (höchste Bilder zuerst in die kürzeste Spalte) + Feinabgleich
