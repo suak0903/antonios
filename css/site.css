@@ -295,8 +295,8 @@ p{margin:0 0 1em}
 .usps li:last-child{border-bottom:0}
 .usps b{font-weight:600;color:var(--ink);white-space:nowrap}
 .usps .mark{
-  flex:0 0 18px;align-self:center;height:4px;
-  background:linear-gradient(90deg,var(--verde) 0 33.4%,#fff 33.4% 66.7%,var(--rosso) 66.7% 100%);
+  flex:0 0 6px;align-self:stretch;margin:6px 0;
+  background:linear-gradient(180deg,var(--verde) 0 33.4%,#fff 33.4% 66.7%,var(--rosso) 66.7% 100%);
   box-shadow:0 0 0 1px rgba(0,0,0,.05);
 }
 
